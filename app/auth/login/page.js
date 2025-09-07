@@ -9,7 +9,7 @@ const Testimonials = [
     avatarSrc: "https://randomuser.me/api/portraits/women/57.jpg",
     name: "Sarah Chen",
     handle: "@sarahdigital",
-    text: "NoteCraft revolutionized my writing process. Perfect for capturing fleeting ideas and organizing thoughts seamlessly."
+    text: "Beacon revolutionized my writing process. Perfect for capturing fleeting ideas and organizing thoughts seamlessly."
   },
   {
     avatarSrc: "https://randomuser.me/api/portraits/men/64.jpg",
@@ -21,7 +21,7 @@ const Testimonials = [
     avatarSrc: "https://randomuser.me/api/portraits/women/32.jpg",
     name: "Emma Thompson",
     handle: "@emmacreates",
-    text: "As a content creator, I'm constantly juggling ideas. NoteCraft keeps everything accessible and organized. Game-changer!"
+    text: "As a content creator, I'm constantly juggling ideas. Beacon keeps everything accessible and organized. Game-changer!"
   },
 ];
 
