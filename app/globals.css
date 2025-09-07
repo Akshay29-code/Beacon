@@ -294,7 +294,7 @@ body {
 
 @font-face {
   font-family: "Blank River";
-  src: url("/fonts/BlankRiver.woff2") format("woff2");
+  src: url("/fonts/BlankRiver.ttf") format("ttf");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -322,8 +322,8 @@ body {
 
 @font-face {
   font-family: "Barcelona Graffiti Bombing";
-  src: url("/font/BarcelonaGraffitiBombing.woff2") format("woff2"),
-       url("/font/BarcelonaGraffitiBombing.woff") format("woff");
+  src: url("/font/BarcelonaGraffitiBombing.otf") format("otf"),
+       url("/font/BarcelonaGraffitiBombing.otf") format("otf");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
