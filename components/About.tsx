@@ -25,8 +25,8 @@ const exampleData1 = {
           Beacon is a note taking app built at the Checkpoint Hackathon designed to turn productivity into play with street culture design, gamified focus, and AI powered notes. It’s not just another tool, it’s your signal to stay sharp and creative.
       </>
   ),
-  primaryImageSrc: 'https://www.fey.com/marketing/_next/static/media/newsletter-desktop-2_4x.e594b737.png',
-  secondaryImageSrc: 'https://www.fey.com/marketing/_next/static/media/newsletter-desktop-1_4x.9cc114e6.png',
+  primaryImageSrc: './about.jpeg',
+  secondaryImageSrc: './about.jpeg',
 };
 
 
