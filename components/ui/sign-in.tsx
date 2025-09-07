@@ -31,7 +31,6 @@ export function SignInPage({
 }: SignInPageProps) {
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
-      {/* Left side - Sign In Form */}
       <div className="flex items-center justify-center p-8 bg-black">
         <div className="w-full max-w-md space-y-6">
           <div className="space-y-2">
@@ -93,7 +92,6 @@ export function SignInPage({
             </Button>
           </form>
 
-          {/* Divider */}
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
               <span className="w-full border-t border-gray-700" />
@@ -103,7 +101,6 @@ export function SignInPage({
             </div>
           </div>
 
-          {/* Google Sign In */}
           <Button
             type="button"
             variant="outline"
@@ -133,12 +130,9 @@ export function SignInPage({
         </div>
       </div>
 
-      {/* Right side - Hero Image and Testimonials */}
       <div className="hidden lg:block relative">
-        {/* Gradient Background */}
         <div style={{backgroundImage: `url('https://images.unsplash.com/photo-1642615835477-d303d7dc9ee9?w=2160&q=80')`}} className="rounded-3xl m-4 absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400"></div>
         
-        {/* Testimonials at Bottom */}
         <div className="absolute bottom-8 left-8 right-8">
           <div className="flex gap-4">
             {testimonials.map((testimonial, index) => (

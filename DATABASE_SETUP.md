@@ -7,7 +7,7 @@ This guide will help you set up the Appwrite database for the NoteCraft applicat
 1. Go to your Appwrite Console (https://cloud.appwrite.io)
 2. Navigate to **Databases** in the left sidebar
 3. Click **Create Database**
-4. Set the database name: `notes_database`
+4. Set the database name: `No`
 5. Set the database ID: `notes_database` (this should match the DATABASE_ID in the code)
 
 ## 2. Create Notes Collection

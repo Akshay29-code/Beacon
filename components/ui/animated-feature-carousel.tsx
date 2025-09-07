@@ -19,18 +19,13 @@ import {
   type Variants,
 } from "framer-motion"
 
-// --- Helper Functions and Fallbacks ---
-
-// A simple utility for class names, similar to cn/clsx
 const cn = (...classes: (string | boolean | undefined)[]) => {
   return classes.filter(Boolean).join(" ")
 }
 
-// Placeholder for image assets if they are not found.
 const placeholderImage = (text = "Image") =>
   `https://placehold.co/600x400/1a1a1a/ffffff?text=${text}`
 
-// --- Types ---
 type StaticImageData = string;
 
 type WrapperStyle = MotionStyle & {
@@ -78,7 +73,6 @@ interface Step {
   description: string
 }
 
-// --- Constants ---
 const TOTAL_STEPS = 4
 
 const steps: readonly Step[] = [
@@ -137,26 +131,17 @@ interface AnimatedStepImageProps extends StepImageProps {
   onAnimationComplete?: () => void
 }
 
-// --- Hooks ---
 function useNumberCycler(totalSteps: number = TOTAL_STEPS, interval: number = 5000) {
   const [currentNumber, setCurrentNumber] = useState(0);
 
-  // This effect handles the automatic cycling.
-  // It depends on `currentNumber`, so every time the step changes,
-  // it will clear the old timer and set a new one for the next step.
   useEffect(() => {
     const timerId = setTimeout(() => {
       setCurrentNumber((prev) => (prev + 1) % totalSteps);
     }, interval);
 
-    // Cleanup function to clear the timer if the component unmounts
-    // or if the dependencies of the effect change (e.g., user clicks a step).
     return () => clearTimeout(timerId);
   }, [currentNumber, totalSteps, interval]);
 
-  // This function allows manual setting of the step.
-  // When called, it updates `currentNumber`, which will trigger the useEffect
-  // to reset the timer for the next cycle.
   const setStep = useCallback((stepIndex: number) => {
       setCurrentNumber(stepIndex % totalSteps);
   }, [totalSteps]);
@@ -177,8 +162,7 @@ function useIsMobile() {
   }, [])
   return isMobile
 }
-
-// --- Components ---
+      
 function IconCheck({ className, ...props }: React.ComponentProps<"svg">) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" className={cn("h-4 w-4", className)} {...props} >

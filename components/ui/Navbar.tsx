@@ -16,7 +16,6 @@ export default function Navbar(){
         const currentUser = await account.get();
         setUser(currentUser);
       } catch (error) {
-        // User is not yet logged in
         setUser(null);
       } finally {
         setIsLoading(false);

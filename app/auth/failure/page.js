@@ -8,7 +8,6 @@ const AuthFailurePage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    // Auto-redirect after 5 seconds
     const timer = setTimeout(() => {
       router.push('/auth/login');
     }, 5000);

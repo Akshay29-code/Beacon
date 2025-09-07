@@ -349,7 +349,7 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
           gsap.to(prevBg, { opacity: 0, duration: D * 0.8, ease: "power2.out" });
         }
       }
-          
+
       measureAndCenterLists(to, true);
 
       leftItemRefs.current.forEach((el, i) => {
@@ -377,7 +377,6 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
       });
     };
 
-    // programmatic navigation
     const goTo = (to: number, withScroll = true) => {
       const clamped = clamp(to, 0, total - 1);
       isSnappingRef.current = true;
@@ -387,7 +386,6 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
       const snapMs = durations.snap ?? 800;
 
       if (withScroll && typeof window !== "undefined") {
-        // If you installed Lenis, you can integrate here
         window.scrollTo({ top: pos, behavior: "smooth" });
         setTimeout(() => (isSnappingRef.current = false), snapMs);
       } else {
@@ -406,10 +404,8 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
       refresh: () => ScrollTrigger.refresh(),
     }));
 
-    // click/hover on list items
     const handleJump = (i: number) => goTo(i);
     const handleLoadedStagger = () => {
-      // soft entrance for lists at mount
       leftItemRefs.current.forEach((el, i) => {
         gsap.fromTo(
           el,
@@ -426,14 +422,12 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
       });
     };
 
-    // mount entrance
     useEffect(() => {
       handleLoadedStagger();
       measureAndCenterLists(index, false);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    // CSS vars
     const cssVars: CSSProperties = {
       ["--fx-font" as any]: fontFamily,
       ["--fx-text" as any]: colors.text ?? "rgba(245,245,245,0.92)",
@@ -461,7 +455,6 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
         <div className="fx-scroll">
           <div className="fx-fixed-section" ref={fixedSectionRef}>
             <div className="fx-fixed" ref={fixedRef}>
-              {/* Backgrounds */}
               <div className="fx-bgs" aria-hidden="true">
                 {sections.map((s, i) => (
                   <div className="fx-bg" key={s.id ?? i}>
@@ -482,14 +475,10 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
                 ))}
               </div>
 
-              {/* Grid */}
               <div className="fx-grid">
-                {/* Header */}
                 {header && <div className="fx-header">{header}</div>}
 
-                {/* Content (lists + center) */}
                 <div className="fx-content">
-                  {/* Left list */}
                   <div className="fx-left" role="list">
                     <div className="fx-track" ref={leftTrackRef}>
                       {sections.map((s, i) => (
@@ -508,7 +497,6 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
                     </div>
                   </div>
 
-                  {/* Center title (masked words if string) */}
                   <div className="fx-center">
                     {sections.map((s, sIdx) => {
                       tempWordBucket.current = [];
@@ -531,7 +519,6 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
                     })}
                   </div>
 
-                  {/* Right list */}
                   <div className="fx-right" role="list">
                     <div className="fx-track" ref={rightTrackRef}>
                       {sections.map((s, i) => (
@@ -551,7 +538,6 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
                   </div>
                 </div>
 
-                {/* Footer + progress */}
                 <div className="fx-footer">
                   {footer && <div className="fx-footer-title">{footer}</div>}
                   {showProgress && (
