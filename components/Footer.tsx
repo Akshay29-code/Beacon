@@ -1,13 +1,12 @@
 "use-client";
 
 import React from "react";
+import { FooterComp} from "@/components/ui/large-name-footer";
 
 export default function Footer(){
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-      
-    </section>
+    <div className="block">
+      <FooterComp />
+    </div>
   );
 }
-
-
